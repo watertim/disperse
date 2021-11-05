@@ -3658,6 +3658,7 @@
       }.bind(this);
 
       this.balance = function() {
+        console.log("chainid: " + str(this.chainId))
         switch (this.sending) {
           case 'token': return this.token.balance
           case 'ether': return this.wallet.balance
@@ -3691,6 +3692,7 @@
       }.bind(this);
 
       this.chain_changed = function(new_chain_id) {
+        console.log("newchainid:" + str(new_chain_id));
         window.location.reload();
       }.bind(this);
 
