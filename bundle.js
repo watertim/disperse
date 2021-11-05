@@ -3658,7 +3658,6 @@
       }.bind(this);
 
       this.balance = function() {
-        console.log("chainid: " + str(this.chainId))
         switch (this.sending) {
           case 'token': return this.token.balance
           case 'ether': return this.wallet.balance
@@ -3681,7 +3680,10 @@
 
       this.afterWeb3 =async  function() {
         window.provider = new ethers.providers.Web3Provider(window.ethereum);
-        window.chain_id = (await provider.getNetwork()).chainId;
+        window.chain_id = parseInt(Number(window.ethereum.chainId), 10);
+
+        console.log("chainid: " + String(window.chain_id));
+
         ethereum.request({ method: 'eth_accounts' }).then(this.accounts_changed);
         ethereum.on('chainChanged', this.chain_changed);
         ethereum.on('accountsChanged', this.accounts_changed);
@@ -3692,7 +3694,6 @@
       }.bind(this);
 
       this.chain_changed = function(new_chain_id) {
-        console.log("newchainid:" + str(new_chain_id));
         window.location.reload();
       }.bind(this);
 
