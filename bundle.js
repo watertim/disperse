@@ -3170,6 +3170,7 @@
       66: '0xD152f549545093347A162Dce210e7293f1452150',    // okex
       43114: '0x102282451C857506ec0818086695878919F4B88b', // avax
       1313161554: '0x0a37577d21168894ffB24cA927dA0e88D4E607D8', // aurora
+      25: '0xDa37b4B5cfca049c0052B18050B6777DE0F95fC5', // aurora
     },
   };
 
@@ -3424,6 +3425,16 @@
       explorer: {
         name: 'explorer',
         base: 'https://explorer.mainnet.aurora.dev/',
+        tx: function (tx) { return ("tx/" + tx); },
+        addr: function (addr) { return ("address/" + addr); },
+      },
+    },
+    25: {
+      name: "CRO",
+      symbol: "CRO",
+      explorer: {
+        name: 'explorer',
+        base: 'https://cronos.crypto.org/explorer/',
         tx: function (tx) { return ("tx/" + tx); },
         addr: function (addr) { return ("address/" + addr); },
       },
