@@ -3171,6 +3171,7 @@
       43114: '0x102282451C857506ec0818086695878919F4B88b', // avax
       1313161554: '0x0a37577d21168894ffB24cA927dA0e88D4E607D8', // aurora
       25: '0xDa37b4B5cfca049c0052B18050B6777DE0F95fC5', // aurora
+      288: '0x76fD049C0528E82de32EfaCbd251edF271AF8ECe', // boba
     },
   };
 
@@ -3439,6 +3440,16 @@
         addr: function (addr) { return ("address/" + addr); },
       },
     },
+    288: {
+      name: "boba",
+      symbol: "ETH",
+      explorer: {
+        name: 'explorer',
+        base: 'https://blockexplorer.boba.network/',
+        tx: function (tx) { return ("tx/" + tx); },
+        addr: function (addr) { return ("address/" + addr); },
+      },
+    }
   };
 
   function explorer_tx(tx) {
